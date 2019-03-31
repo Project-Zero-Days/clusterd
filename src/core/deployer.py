@@ -76,6 +76,7 @@ def run(fingerengine):
                     #                   deployer.__name__, state.external_port))
                     # if 'n' in r.lower():
                     #     continue
+                    pass
 
                 utility.Msg("Deploying WAR with deployer %s (%s)" %
                                 (deployer.title, deployer.__name__), LOG.DEBUG)
