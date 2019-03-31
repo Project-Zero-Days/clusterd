@@ -55,6 +55,7 @@ def run(fingerengine):
         loaded_deployers.append(dp)
 
     # start iterating through fingerprints
+    fingerprint_found = False
     for fingerprint in fingerengine.fingerprints:
 
         # build list of deployers applicable to this version
@@ -89,6 +90,8 @@ def run(fingerengine):
                 if fingerengine.options.invoke_payload:
                     invoke(fingerengine, fingerprint, deployer)
 
-                return
+                fingerprint_found = True
+                #return
 
-    utility.Msg("No valid fingerprints were found to deploy.", LOG.ERROR)
+    if not fingerprint_found:
+        utility.Msg("No valid fingerprints were found to deploy.", LOG.ERROR)
