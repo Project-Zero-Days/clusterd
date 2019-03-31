@@ -35,10 +35,12 @@ def deploy(fingerengine, fingerprint):
                   }
 
     if fingerprint.version == "3.0":
-        tmp = utility.capture_input("Version 3.0 has a strict WAR XML structure.  "
-                              "Ensure your WAR is compatible with 3.0 [Y/n]")
-        if 'n' in tmp.lower():
-            return
+        # tmp = utility.capture_input("Version 3.0 has a strict WAR XML structure.  "
+        #                       "Ensure your WAR is compatible with 3.0 [Y/n]")
+        # if 'n' in tmp.lower():
+        #     return
+
+        utility.Msg("Version 3.0 has a strict WAR XML structure. Ensure your WAR is compatible with 3.0")
 
     utility.Msg("Preparing to deploy {0}..".format(war_file))
 

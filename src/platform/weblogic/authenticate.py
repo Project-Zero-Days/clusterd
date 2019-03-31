@@ -73,8 +73,10 @@ def checkAuth(ip, fingerprint, returnCookie = False):
         # by default, certain WebLogic servers have a lockout of 5 attempts 
         # before a 30 minute lock.  Lets confirm the user knows this.
         #
-        tmp = utility.capture_input("WebLogic has a lockout after 5 attempts.  Continue? [Y/n]")
-        if 'n' in tmp: return (None, None)
+        # tmp = utility.capture_input("WebLogic has a lockout after 5 attempts.  Continue? [Y/n]")
+        # if 'n' in tmp: return (None, None)
+
+        utility.Msg("Warning: by default, certain WebLogic servers have a lockout of 5 attempts before a 30 minute lock")
 
         state.hasbf = True
         wordlist = []

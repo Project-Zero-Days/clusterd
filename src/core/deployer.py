@@ -71,11 +71,11 @@ def run(fingerengine):
 
                 # if the deployer is using waitServe, ensure the user knows
                 if 'waitServe' in dir(deployer):
-                    r = utility.capture_input("This deployer (%s) requires an external"\
-                                   " listening port (%s).  Continue? [Y/n]" % (
-                                      deployer.__name__, state.external_port))
-                    if 'n' in r.lower():
-                        continue
+                    # r = utility.capture_input("This deployer (%s) requires an external"\
+                    #                " listening port (%s).  Continue? [Y/n]" % (
+                    #                   deployer.__name__, state.external_port))
+                    # if 'n' in r.lower():
+                    #     continue
 
                 utility.Msg("Deploying WAR with deployer %s (%s)" %
                                 (deployer.title, deployer.__name__), LOG.DEBUG)
